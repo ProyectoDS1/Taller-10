@@ -10,14 +10,14 @@ package sinmalolor;
  * @author reyes
  */
 public class Persona {
-    
+
     protected String Nombre;
     protected String Apellido;
     protected String Cedula;
     protected Address address;
 
-
     public Persona() {
+
     }
 
     /**
@@ -31,10 +31,10 @@ public class Persona {
      * @param Nombre the Nombre to set
      */
     public void setNombre(String Nombre) {
-        if(Nombre.equals("") || Nombre.length()> 16){
+        if (Nombre.equals("") || Nombre.length() > 16) {
             System.out.println("ingreso de nombre incorrecto");
-        }else{
-            this.Nombre = Nombre;            
+        } else {
+            this.Nombre = Nombre;
         }
     }
 
@@ -49,10 +49,10 @@ public class Persona {
      * @param Apellido the Apellido to set
      */
     public void setApellido(String Apellido) {
-        if(Nombre.equals("") || Nombre.length()> 16){
+        if (Apellido.equals("") || Apellido.length() > 16) {
             System.out.println("ingreso de nombre incorrecto");
-        }else{
-            this.Apellido = Apellido;            
+        } else {
+            this.Apellido = Apellido;
         }
     }
 
@@ -67,16 +67,16 @@ public class Persona {
      * @param Cedula the Cedula to set
      */
     public void setCedula(String Cedula) {
-        if(Nombre.equals("") || Nombre.length()> 10){
+        if (Cedula.equals("") || Cedula.length() > 10) {
             System.out.println("ingreso de nombre incorrecto");
-        }else{
-            this.Cedula = Cedula;           
+        } else {
+            this.Cedula = Cedula;
         }
     }
 
     public String mostrarDireccion() {
-        String dir = address.getPais() + " - " + address.getProvincia() + " - " + address.getCiudad();
-        return dir + "\n" + address.getDireccion();
+        return address.getPais() + " - " + address.getProvincia() + " - " + address.getCiudad() + "\n"
+                + address.getDireccion();
     }
 
     public void cambiarDireccion(String nuevoPais, String ciudadnueva, String provinciaNueva, String direccionNueva) {
@@ -85,12 +85,12 @@ public class Persona {
         address.setProvincia(provinciaNueva);
         address.setDireccion(direccionNueva);
     }
-    
-    public void MostrarInformacion(){
+
+    public void MostrarInformacion() {
         System.out.println("Empleado:");
-        System.out.println("Nombre: " + this.getNombre() + ", Apellido: " + this.getApellido() + ", con numero de cedula: " + this.getCedula() );
+        System.out.println("Nombre: " + this.getNombre() + ", Apellido: " + this.getApellido() + ", con numero de cedula: " + this.getCedula());
         System.out.println("Direccion: " + this.mostrarDireccion());
         System.out.println("----------------------");
     }
-    
+
 }
