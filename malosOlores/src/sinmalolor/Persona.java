@@ -14,10 +14,8 @@ public class Persona {
     protected String Nombre;
     protected String Apellido;
     protected String Cedula;
-    protected String provincia;
-    protected String pais;
-    protected String ciudad;
-    protected String direccion;
+    protected Address address;
+
 
     public Persona() {
     }
@@ -65,15 +63,15 @@ public class Persona {
     }
 
     public String mostrarDireccion() {
-        String dir = pais + " - " + provincia + " - " + ciudad;
-        return dir + "\n" + direccion;
+        String dir = address.getPais() + " - " + address.getProvincia() + " - " + address.getCiudad();
+        return dir + "\n" + address.getDireccion();
     }
 
     public void cambiarDireccion(String nuevoPais, String ciudadnueva, String provinciaNueva, String direccionNueva) {
-        pais = nuevoPais;
-        ciudad = ciudadnueva;
-        provincia = provinciaNueva;
-        direccion = direccionNueva;
+        address.setCiudad(ciudadnueva);
+        address.setPais(nuevoPais);
+        address.setProvincia(provinciaNueva);
+        address.setDireccion(direccionNueva);
     }
     
     public void MostrarInformacion(){
