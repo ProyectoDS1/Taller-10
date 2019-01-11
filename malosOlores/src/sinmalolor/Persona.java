@@ -76,4 +76,11 @@ public class Persona {
         direccion = direccionNueva;
     }
     
+    public void MostrarInformacion(){
+        System.out.println("Empleado:");
+        System.out.println("Nombre: " + this.getNombre() + ", Apellido: " + this.getApellido() + ", con numero de cedula: " + this.getCedula() );
+        System.out.println("Direccion: " + this.mostrarDireccion());
+        System.out.println("----------------------");
+    }
+    
 }

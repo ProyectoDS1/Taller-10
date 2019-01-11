@@ -21,19 +21,6 @@ public class Empresa {
         empleados = new ArrayList<Employee>();
     }
     
-    public void MostrarInformacion(Cliente cliente){
-        System.out.println("Cliente:");
-        System.out.println("Nombre: " + cliente.Nombre + ", Apellido: " + cliente.Apellido + ", con numero de cedula: " + cliente.Cedula );
-        System.out.println("Direccion: " + cliente.mostrarDireccion());
-        System.out.println("----------------------");
-    }
-    public void MostrarInformacionEmp(Employee emp){
-        System.out.println("Empleado:");
-        System.out.println("Nombre: " + emp.getNombre() + ", Apellido: " + emp.getApellido() + ", con numero de cedula: " + emp.getCedula() );
-        System.out.println("Direccion: " + emp.mostrarDireccion());
-        System.out.println("----------------------");
-    }
-    
     public void GuardarCliente(String Nombre, String Apellido, String Cedula){
         if(Nombre.equals("") && Nombre.length()> 16){
                 System.out.println("ingreso de nombre incorrecto");
@@ -83,15 +70,14 @@ public class Empresa {
     }
     
     public void mostrarTodo() {
-        
         //Mostrar los clientes 
         for(Cliente cliente : this.clientes){
-            MostrarInformacion(cliente);           
+            cliente.MostrarInformacion();           
         }
         
         //Mostrar los empleados 
         for(Employee empleado : this.empleados){
-            MostrarInformacionEmp(empleado);           
+            empleado.MostrarInformacion();           
         }
     }
     
