@@ -5,7 +5,6 @@
  */
 package sinmalolor;
 
-import conmalolor.*;
 
 /**
  *

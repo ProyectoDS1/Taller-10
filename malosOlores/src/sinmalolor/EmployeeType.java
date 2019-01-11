@@ -5,6 +5,4 @@
  */
 package sinmalolor;
 
-import conmalolor.*;
-
 public enum EmployeeType { Worker, Supervisor, Manager }

@@ -5,7 +5,6 @@
  */
 package sinmalolor;
 
-import conmalolor.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class Empresa {
     public void MostrarInformacion(Cliente cliente){
         System.out.println("Cliente:");
         System.out.println("Nombre: " + cliente.Nombre + ", Apellido: " + cliente.Apellido + ", con numero de cedula: " + cliente.Cedula );
-        System.out.println("Direccion: " + cliente.mostrarLocation());
+        System.out.println("Direccion: " + cliente.mostrarDireccion());
         System.out.println("----------------------");
     }
     public void MostrarInformacionEmp(Employee emp){
@@ -55,7 +54,7 @@ public class Empresa {
 
         }
         Cliente cliente = new Cliente(Nombre, Apellido, Cedula);
-        cliente.setLocation("Ecuador", "Guayaquil", "Guayas", "Alborada 3era etapa");
+        cliente.cambiarDireccion("Ecuador", "Guayaquil", "Guayas", "Alborada 3era etapa");
         this.clientes.add(cliente);
         System.out.println(Nombre +" " + Apellido + " ha sido agregado como nuevo cliente");
         
