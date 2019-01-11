@@ -5,4 +5,17 @@
  */
 package sinmalolor;
 
-public enum EmployeeType { Worker, Supervisor, Manager }
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
+abstract class EmployeeType {
+     Date date = new Date();
+        //Obtiene la hora local
+     LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        //Obtiene el mes en forma de entero
+     int month = localDate.getMonthValue();
+    
+    abstract float entregarDecimo(Employee e);
+    abstract float CalculateYearBonus(Employee e);
+}

@@ -34,39 +34,79 @@ public class Employee extends Persona
     //calcula el salario dependiendo del tipo de trabajador y entrega el décimo correspondiente cada 2 meses
     public float cs()
     {
-        Date date = new Date();
-        //Obtiene la hora local
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        //Obtiene el mes en forma de entero
-        int month = localDate.getMonthValue();
-        switch (employeeType)         
-        {
-            case Worker:
-                //Si el mes es impar entonces le entrega el decimo junto con su salario
-                return month%2==0?salary:salary + rmu/12*2;
-            case Supervisor:
-                float valueS = salary + (bonusPercentage * 0.5F);
-                //Si el mes es impar entonces le entrega el decimo junto con su salario y un bono
-                return month%2==0?valueS:valueS + rmu/12*2;
-            case Manager:
-                float valueM = salary + (bonusPercentage * 0.7F);
-                //Si el mes es impar entonces le entrega el decimo junto con su salario y un bono
-                return month%2==0?valueM:valueM + rmu/12*2;
+        if(this.employeeType!=null){
+            return this.employeeType.entregarDecimo(this);
         }
         return 0.0F;
+        
     }
     //calcula el bonus anual
     public float CalculateYearBonus() 
     {
-        switch (employeeType)
-        {
-            case Worker:
-                return 0;
-            case Supervisor:
-                return salary + salary * 0.7F;
-            case Manager:
-                return salary + salary * 1.0F;
+        if(this.employeeType!=null){
+            return this.employeeType.CalculateYearBonus(this);
         }
         return 0.0F;
     }
+    
+    public float getRmu(){
+        return this.rmu;
+    }
+    public float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(float salary) {
+        this.salary = salary;
+    }
+
+    public float getBonusPercentage() {
+        return bonusPercentage;
+    }
+
+    public void setBonusPercentage(float bonusPercentage) {
+        this.bonusPercentage = bonusPercentage;
+    }
+
+    public EmployeeType getEmployeeType() {
+        return employeeType;
+    }
+
+    public void setEmployeeType(EmployeeType employeeType) {
+        this.employeeType = employeeType;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
+    }
+
+    public String getCedula() {
+        return Cedula;
+    }
+
+    public void setCedula(String Cedula) {
+        this.Cedula = Cedula;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+    
+    
 }
