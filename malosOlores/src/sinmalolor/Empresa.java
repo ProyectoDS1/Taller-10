@@ -22,50 +22,10 @@ public class Empresa {
     }
     
     public void GuardarCliente(String Nombre, String Apellido, String Cedula){
-        if(Nombre.equals("") && Nombre.length()> 16){
-                System.out.println("ingreso de nombre incorrecto");
-        }else{
-            System.out.println("ingreso de nombre correcto");
-
-        }
-        if(Apellido.equals("") && Apellido.length()> 16){
-            System.out.println("ingreso de apellido incorrecto");
-        }else{
-            System.out.println("ingreso de apellido correcto");
-
-        }
-        if(!Cedula.equals("") && Cedula.length()< 10){
-            System.out.println("ingreso de cedula incorrecto");
-        }else{
-            System.out.println("ingreso de cedula correcto");
-
-        }
         Cliente cliente = new Cliente(Nombre, Apellido, Cedula);
         cliente.cambiarDireccion("Ecuador", "Guayaquil", "Guayas", "Alborada 3era etapa");
         this.clientes.add(cliente);
         System.out.println(Nombre +" " + Apellido + " ha sido agregado como nuevo cliente");
-        
-    }
-    
-    public void validarInformacion(String Nombre, String Apellido, String Cedula ){
-        if(Nombre.equals("") && Nombre.length()> 16){
-            System.out.println("ingreso de nombre incorrecto");
-        }else{
-            System.out.println("ingreso de nombre correcto");
-            
-        }
-        if(Apellido.equals("") && Apellido.length()> 16){
-            System.out.println("ingreso de apellido incorrecto");
-        }else{
-            System.out.println("ingreso de apellido correcto");
-            
-        }
-        if(!Cedula.equals("") && Cedula.length()< 10){
-            System.out.println("ingreso de cedula incorrecto");
-        }else{
-            System.out.println("ingreso de cedula correcto");
-            
-        }
         
     }
     

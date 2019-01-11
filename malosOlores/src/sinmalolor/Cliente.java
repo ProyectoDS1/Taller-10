@@ -11,9 +11,9 @@ public class Cliente extends Persona{
     private String telefono;
     
     public Cliente(String Nombre, String Apellido, String Cedula) {
-        this.Nombre = Nombre;
-        this.Apellido = Apellido;
-        this.Cedula = Cedula;
+        this.setNombre(Nombre);
+        this.setApellido(Apellido);
+        this.setCedula(Cedula);
     }
 
     public String getTelefono() {

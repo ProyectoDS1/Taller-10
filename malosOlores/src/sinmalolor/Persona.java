@@ -31,7 +31,11 @@ public class Persona {
      * @param Nombre the Nombre to set
      */
     public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+        if(Nombre.equals("") || Nombre.length()> 16){
+            System.out.println("ingreso de nombre incorrecto");
+        }else{
+            this.Nombre = Nombre;            
+        }
     }
 
     /**
@@ -45,7 +49,11 @@ public class Persona {
      * @param Apellido the Apellido to set
      */
     public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+        if(Nombre.equals("") || Nombre.length()> 16){
+            System.out.println("ingreso de nombre incorrecto");
+        }else{
+            this.Apellido = Apellido;            
+        }
     }
 
     /**
@@ -59,7 +67,11 @@ public class Persona {
      * @param Cedula the Cedula to set
      */
     public void setCedula(String Cedula) {
-        this.Cedula = Cedula;
+        if(Nombre.equals("") || Nombre.length()> 10){
+            System.out.println("ingreso de nombre incorrecto");
+        }else{
+            this.Cedula = Cedula;           
+        }
     }
 
     public String mostrarDireccion() {
